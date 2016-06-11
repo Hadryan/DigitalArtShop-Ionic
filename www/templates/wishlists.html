@@ -1,0 +1,22 @@
+<ion-view view-title="My Wishlist">
+    <ion-nav-buttons side="secondary">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="toggleDelete()"></button>
+      </div>
+    </ion-nav-buttons>
+  <ion-content>
+    <ion-list show-delete="shouldShowDelete">
+      <ion-item ng-repeat="wishlist in wishlists" href="#/app/onlineshop/{{wishlist._id._id}}" class="item-thumbnail-left" on-swipe-left="deleteWishlist(wishlist._id._id)">
+        <img ng-src="{{baseURL+wishlist._id.image}}">
+        <h2>{{wishlist._id.name}} 
+        <span style="font-size:75%">{{wishlist._id/100 | currency}}</span>
+        <span class="badge badge-assertive">{{wishlist._id.label}}</span></h2>
+        <p>{{wishlist._id.description}}</p>
+        <ion-delete-button class="ion-minus-circled"
+          ng-click="deleteWishlist(wishlist._id._id)">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

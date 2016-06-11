@@ -1,0 +1,24 @@
+<ion-view view-title="About Us">
+  <ion-content>
+        <div class="card">
+            <div class="item item-divider">
+                <h2>Introduction</h2>
+            </div>
+            <div class="item item-text-wrap">
+                <p>Fan's Digital Art Shop is the dream of our CEO, Mr. Chi Ming Fan.  It opens just now.  It is a place for exhibition of the artworks that are made by our artists.  It is also a purchase platform for the customers who love our artworks and want to buy them.</p>
+                <p>All the artworks are made from photos and special effects.  Also, a descriptive title is given to each artwork.  Every artwork is unique and it will only be sold to one customer.</p>
+            </div>
+      </div>
+      <ul class="list list-inset">
+        <li class="item item-divider">
+            <h2>Our Artists</h2>
+        </li>
+        <li class="item item-avatar item-text-wrap" ng-repeat="artist in artists">
+            <img ng-src="{{baseURL + artist.image}}" alt="Chi Ming Fan">
+            <h3>{{artist.name}}<h3>
+            <h4>{{artist.designation}}</h4>
+            <p>{{artist.description}}</p>
+        </li>
+    </ul>
+  </ion-content>
+</ion-view>

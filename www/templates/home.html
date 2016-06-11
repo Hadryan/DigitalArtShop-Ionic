@@ -1,0 +1,38 @@
+<ion-view view-title="Fan's Digital Art Shop">
+  <ion-content>
+    <div class="card">
+        <div class="item item-divider">
+            Online Shop
+            <span class="badge badge-assertive">{{artwork.label}}</span>
+        </div>
+        <div class="item item-thumbnail-left item-text-wrap">
+            <img ng-src="{{baseURL+artwork.image}}" alt="Red-eyed bird">
+            <h2>{{artwork.name}} 
+            <span class="badge">{{artwork.price/100 | currency}}</span></h2>
+            <p>{{artwork.description}}</p>
+        </div>
+    </div>
+      <div class="card">
+          <div class="item item-divider">
+            Exhibition
+            <span class="badge badge-assertive">{{exhibition.label}}</span>
+          </div>
+          <div class="item item-thumbnail-left item-text-wrap">
+               <img ng-src="{{baseURL+exhibition.image}}" alt="Semicircles">
+                <h2>{{exhibition.name}}</h2>
+                <p>{{exhibition.description}}</p>
+          </div>
+      </div>
+      <div class="card">
+          <div class="item item-divider">
+            Our Artists
+          </div>
+          <div class="item item-thumbnail-left item-text-wrap">
+               <img ng-src="{{baseURL+artist.image}}" alt="Chi Ming Fan">
+                <h2>{{artist.name}}</h2>
+                <h4>{{artist.designation}}</h4>
+                <p>{{artist.description}}</p>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>

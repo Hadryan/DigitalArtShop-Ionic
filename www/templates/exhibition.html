@@ -1,0 +1,30 @@
+<ion-view view-title="Exhibition">
+   <div class="tabs-striped tabs-color-royal">
+    <ul class="tabs">
+        <li ng-class="{active:isSelected(1)}" class="tab-item">
+            <a ng-click="select(1)">All</a></li>
+        <li ng-class="{active:isSelected(2)}" class="tab-item">
+            <a ng-click="select(2)">Life</a></li>
+        <li ng-class="{active:isSelected(3)}" class="tab-item">
+            <a ng-click="select(3)">Object</a></li>
+        <li ng-class="{active:isSelected(4)}" class="tab-item">
+            <a  ng-click="select(4)">Fiction</a></li>
+		<li ng-class="{active:isSelected(5)}" class="tab-item">
+            <a ng-click="select(5)">Pattern</a></li>
+        <li ng-class="{active:isSelected(6)}" class="tab-item">
+            <a ng-click="select(6)">Others</a></li>
+    </ul>
+  </div>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="exhibition in exhibitions | filter:{category: filtText}" class="item-thumbnail-left">
+        <img ng-src="{{baseURL+exhibition.image}}">
+        <h2>{{exhibition.name}}<h2>
+        <h2><span style="font-size:75%">{{exhibition.price/100 | currency}}</span>
+        <span class="badge badge-assertive">{{exhibition.label}}</span></h2>
+        <p>{{exhibition.description}}</p>
+        
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
